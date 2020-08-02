@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ListScreen from '../screens/ListScreen';
 import WebPageScreen from '../screens/WebPageScreen';
 import ScannerScreen from '../screens/ScannerScreen';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
 
