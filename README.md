@@ -4,4 +4,4 @@
 ![App screenshot](/screenshot2.jpg?raw=true)
 ![App screenshot](/screenshot3.jpg?raw=true)
 
-Swipe to left to show delete button.
+Swipe to the left to show "Remove" button.
