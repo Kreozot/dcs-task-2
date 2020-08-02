@@ -2,12 +2,17 @@ import React, { useCallback } from 'react';
 import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
 
 import { formatDate } from '../../format';
+import { isValidURL } from '../../validation';
 
 export default function ListItem(props) {
   const { item, navigation } = props;
 
   const onPress = useCallback(() => {
-    navigation.navigate('WebPage', { url: item.url });
+    if (isValidURL(item.url)) {
+      navigation.navigate('WebPage', { url: item.url });
+    } else {
+      alert(`Looks like this isn't a URL, sorry.`);
+    }
   }, [navigation, item.url]);
 
   return (
