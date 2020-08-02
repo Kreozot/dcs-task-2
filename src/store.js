@@ -2,7 +2,7 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 export const urlListSlice = createSlice({
   name: 'urlList',
-  initialState: [{ url: 'http://upyachka.ru' }, { url: 'test2' }],
+  initialState: [{ url: 'http://upyachka.ru', date: new Date() }, { url: 'test2', date: new Date() }],
   reducers: {
     addUrl(state, action) {
       const { url } = action.payload;

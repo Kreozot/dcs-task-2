@@ -10,7 +10,10 @@ function ScannerScreen(props) {
   const { navigation } = props;
 
   const onSuccess = useCallback((event) => {
-    store.dispatch(urlActions.addUrl({ url: event.data }));
+    store.dispatch(urlActions.addUrl({
+      url: event.data,
+      date: new Date(),
+    }));
     navigation.goBack();
   }, [navigation]);
 
