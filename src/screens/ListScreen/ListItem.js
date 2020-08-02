@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
 
 import { formatDate } from '../../format';
 
@@ -11,12 +11,12 @@ export default function ListItem(props) {
   }, [navigation, item.url]);
 
   return (
-    <View>
-      <TouchableOpacity style={styles.container} onPress={onPress}>
-        <Text style={styles.link}>{item.url}</Text>
-        <Text style={styles.date}>{formatDate(item.date)}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableHighlight onPress={onPress}>
+      <View style={styles.container}>
+          <Text style={styles.link}>{item.url}</Text>
+          <Text style={styles.date}>{formatDate(item.date)}</Text>
+      </View>
+    </TouchableHighlight>
   );
 }
 
@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
   date: {
     color: '#555',
     fontSize: 12,
+    marginLeft: 10,
   },
 });
