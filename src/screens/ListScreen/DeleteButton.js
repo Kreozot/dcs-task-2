@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { store, urlListSlice } from '../../store';
 
@@ -15,26 +16,35 @@ export default function DeleteButton(props) {
   }, [item.id]);
 
   return (
-    <View>
-      <TouchableOpacity style={styles.container} onPress={onPress}>
-        <Text style={styles.text}>Delete</Text>
-      </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.wrapper}>
+        <Icon.Button
+          onPress={onPress}
+          style={styles.button}
+          name="trash"
+          iconStyle={styles.icon}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: 'white',
     flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  wrapper: {
     alignItems: 'center',
-    padding: 12,
-    borderBottomColor: '#b0b0b0',
-    borderBottomWidth: 0.4,
+    justifyContent: 'center',
+    marginRight: 10,
+  },
+  button: {
     backgroundColor: 'red',
   },
-  text: {
-    fontSize: 16,
-    color: '#2e2e2e',
-    width: 100,
+  icon: {
+    marginRight: 0,
   },
 });

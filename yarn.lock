@@ -5091,6 +5091,14 @@ react-native-swipe-list-view@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/react-native-swipe-list-view/-/react-native-swipe-list-view-3.2.3.tgz#2b4aa361f26b6e55efe38a829ce122dff6c00292"
 
+react-native-vector-icons@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-7.0.0.tgz#5b92ed363c867645daad48c559e1f99efcfbb813"
+  dependencies:
+    lodash "^4.17.15"
+    prop-types "^15.7.2"
+    yargs "^15.0.2"
+
 react-native-webview@^10.3.3:
   version "10.3.3"
   resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-10.3.3.tgz#ab1cd1fdc800f4897362f80d97e2d9156dfabd22"
@@ -6441,7 +6449,7 @@ yargs@^14.2.0:
     y18n "^4.0.0"
     yargs-parser "^15.0.1"
 
-yargs@^15.1.0, yargs@^15.3.1:
+yargs@^15.0.2, yargs@^15.1.0, yargs@^15.3.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   dependencies:
