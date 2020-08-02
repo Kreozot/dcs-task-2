@@ -1,8 +1,7 @@
-import React, { useState, useCallback } from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
+import React, { useCallback } from 'react';
+import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import { urlListSlice, store } from '../../store';
 import ListItem from './ListItem';
 
 function ListScreen(props) {

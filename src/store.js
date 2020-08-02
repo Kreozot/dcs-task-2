@@ -4,11 +4,11 @@ export const urlListSlice = createSlice({
   name: 'urlList',
   initialState: [{ url: 'http://upyachka.ru' }, { url: 'test2' }],
   reducers: {
-    add(state, action) {
+    addUrl(state, action) {
       const { url } = action.payload;
       state.push({ url });
     },
-    remove(state, action) {
+    removeUrl(state, action) {
       const { index } = action.payload;
       state.splice(index, 1);
     },

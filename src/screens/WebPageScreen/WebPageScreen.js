@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { WebView } from 'react-native-webview';
 
 export default function MyWeb(props) {
@@ -6,9 +6,6 @@ export default function MyWeb(props) {
 
   console.log(url);
   return (
-    <WebView
-      source={{ uri: url }}
-      style={{ marginTop: 20 }}
-    />
+    <WebView source={{ uri: url }} />
   );
 }
