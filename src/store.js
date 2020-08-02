@@ -1,12 +1,17 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { createSlice, configureStore, combineReducers } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import AsyncStorage from '@react-native-community/async-storage';
 import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
-import { serializeDate } from './format';
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+};
 
 export const urlListSlice = createSlice({
   name: 'urlList',
-  initialState: [{ url: 'http://upyachka.ru', date: serializeDate(new Date()), id: '1' }, { url: 'test2', date: serializeDate(new Date()), id: '2' }],
+  initialState: [],
   reducers: {
     addUrl(state, action) {
       const { url, date } = action.payload;
@@ -20,7 +25,10 @@ export const urlListSlice = createSlice({
 });
 
 export const store = configureStore({
-  reducer: {
+  reducer: persistReducer(persistConfig, combineReducers({
     urlList: urlListSlice.reducer,
-  },
+  })),
+  middleware: [],
 });
+
+export const persistor = persistStore(store);
